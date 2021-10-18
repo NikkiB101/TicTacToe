@@ -10,11 +10,15 @@ export default class Game {
     }
 
     makeMove(i) {
+        if (!this.isInProgress()) {
+            return;
+        }
         if (this.board[i]) {
             return;
         }
 
         this.board[i] = this.turn;
+        if(!this.findWinningCombination()){
         this.nextTurn();
     }
     findWinningCombination() {
