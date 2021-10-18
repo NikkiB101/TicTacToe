@@ -18,32 +18,35 @@ export default class Game {
         }
 
         this.board[i] = this.turn;
-        if(!this.findWinningCombination()){
-        this.nextTurn();
-    }
-    findWinningCombination() {
-        const winningCombination = [
-            [0, 3, 6],
-            [1, 4, 7],
-            [2, 5, 8],
-            [0, 1, 2],
-            [3, 4, 5],
-            [6, 7, 8],
-            [0, 4, 8],
-            [2, 4, 6]
-        ];
-
-        for (const combination of winningCombination) {
-            const [a, b, c] = combination;
-
-            if (this.board[a] && (this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
-                return combination;
-            }
+        if (!this.findWinningCombination()) {
+            this.nextTurn();
         }
-        return null;
-    }
 
-    isInProgress() {
-        return !this.findWinningCombination() && this.board.includes(null);
     }
-}
+    
+        findWinningCombination() {
+            const winningCombination = [
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for (const combination of winningCombination) {
+                const [a, b, c] = combination;
+
+                if (this.board[a] && (this.board[a] === this.board[b] && this.board[a] === this.board[c])) {
+                    return combination;
+                }
+            }
+            return null;
+        }
+
+        isInProgress() {
+            return !this.findWinningCombination() && this.board.includes(null);
+        }
+    }
