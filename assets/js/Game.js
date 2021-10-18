@@ -38,4 +38,8 @@ export default class Game {
         }
         return null;
     }
+
+    isInProgress() {
+        return !this.findWinningCombination() && this.board.includes(null);
+    }
 }
