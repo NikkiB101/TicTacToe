@@ -1,0 +1,36 @@
+.app {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 800px;
+    height: 800px;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background: black;
+}
+
+.turn {
+    padding: 10px;
+    color: white;
+    text-align: center ;
+}
+
+.progress {
+    padding: 10px;
+    color: white;
+    text-align: center ;
+    flex-grow: 1;
+}
+
+.reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
